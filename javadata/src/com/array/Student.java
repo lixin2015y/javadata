@@ -1,5 +1,7 @@
 package com.array;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private int score;
@@ -14,12 +16,17 @@ public class Student {
         return String.format("Student(name: %s , score: %d)", name, score);
     }
 
-    public static void main(String[] args) {
-        Array<Student> studentArray = new Array<>(20);
-        studentArray.addEnd(new Student("Alice", 100));
-        studentArray.addEnd(new Student("Bob", 66));
-        studentArray.addEnd(new Student("Charlie", 88));
-        System.out.println(studentArray.toString());
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o instanceof Student) {
+            Student student = (Student) o;
+            return Objects.equals(this.name, student.name) && this.score == student.score;
+        }
+        return false;
     }
 }
 
