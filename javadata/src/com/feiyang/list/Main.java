@@ -1,4 +1,5 @@
-package com.feiyang;
+package com.feiyang.list;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,6 @@ public class Main {
         System.out.println(list.indexOf("李四"));
 
         System.out.println(list.contains("赵六"));
-
 
 
     }
